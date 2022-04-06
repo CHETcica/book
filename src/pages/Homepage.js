@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAllBook } from "../action";
+import { Link } from "react-router-dom";
+
 
 const Homepage = () => {
   const books = useSelector((state) => state.books);
-//   const [books, setBooks] = useState([
+// const [books, setBooks] = useState([
 //     {"title": "Flexible Rails",
 //     "isbn": "1933988509",
 //     "pageCount": 592,
@@ -43,7 +45,7 @@ const Homepage = () => {
             <h2 className="card-title">{el.title}</h2>
             <p>{el.shortDescription}</p>
             <div className="card-actions justify-end">
-              <button className="btn btn-primary">Description</button>
+              <Link to={"/description"} className="btn btn-primary">Description</Link>
             </div>
           </div>
         </div>
