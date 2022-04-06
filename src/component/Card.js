@@ -1,15 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Card = ({thumbnailUrl, title, shortDescription}) => {
+const Card = ({data}) => {
   return (
-    <div className="card w-96 bg-base-100 shadow-xl">
+    <div className="card  bg-base-100 shadow-xl">
       <figure>
-        <img src={thumbnailUrl} alt="Shoes" />
+        <img src={data.thumbnailUrl} alt="Shoes" />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">{title}</h2>
-        <p>{shortDescription}</p>
+        <h2 className="card-title">{data.title}</h2>
+        <p>{data.isbn}</p>
         <div className="card-actions justify-end">
           <Link to={"/description"} className="btn btn-primary">
             Description

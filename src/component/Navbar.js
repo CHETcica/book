@@ -1,11 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { SearchBook } from "../action";
+
 
 const Navbar = () => {
   return (
-    <div>
+    <div className="mb-3">
       <div className="navbar bg-base-100">
         <div className="flex-1">
-          <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+          <Link to={"/"} className="btn btn-ghost normal-case text-xl">daisyUI</Link>
         </div>
         <div className="flex-none gap-2">
           <div className="form-control">
@@ -13,6 +16,7 @@ const Navbar = () => {
               type="text"
               placeholder="Search"
               className="input input-bordered"
+              onChange={(e) => SearchBook(e.target.value)}
             />
           </div>
           <div className="dropdown dropdown-end">
